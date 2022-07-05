@@ -1,10 +1,13 @@
+import sys
+from PyQt5.QtWidgets import QApplication
+
+from typelen_class import Typlen
+
 
 if __name__ == '__main__':
-    import tkinter as tk
+    app = QApplication(sys.argv)
+        
+    typlen = Typlen()
 
-    root = tk.Tk()
-
-    screen_width = root.winfo_screenwidth()
-    screen_height = root.winfo_screenheight()
-
-    print('width: ' + str(screen_width) + ', height: ' + str(screen_height))
+    typlen.showMaximized()
+    sys.exit(app.exec_())
