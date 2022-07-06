@@ -1,6 +1,9 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
-from PyQt5.uic import loadUi
+# from PyQt5.uic import loadUi
+from PyQt5 import QtGui
+
+from widgets.main_window import Ui_MainWindow
 
 from start_menu_class import StartMenu
 from start_menu_class import StartMenu
@@ -15,17 +18,13 @@ from text_edit_window_class import TextEditWindow
 class Typlen(QMainWindow):
     def __init__(self):
         super(Typlen, self).__init__()
-        loadUi('src/window_uis/main_window.ui', self)
-
-        self.window = StartMenu(self)
-
-        self.setCentralWidget(self.window)
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
+        self.go_to_start_menu()
 
     def open_new_window(self, window):
         self.setCentralWidget(window)
         self.show()
-        self.window.close()
-        self.window = window
 
     def go_to_start_menu(self):
         self.open_new_window(StartMenu(self))

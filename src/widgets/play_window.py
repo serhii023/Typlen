@@ -1,0 +1,96 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'play_window.ui'
+#
+# Created by: PyQt5 UI code generator 5.14.1
+#
+# WARNING! All changes made in this file will be lost!
+
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+
+class Ui_Form(object):
+    def setupUi(self, Form):
+        Form.setObjectName("Form")
+        Form.resize(700, 500)
+        self.verticalLayout = QtWidgets.QVBoxLayout(Form)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.widget_2 = QtWidgets.QWidget(Form)
+        self.widget_2.setMaximumSize(QtCore.QSize(16777215, 50))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.widget_2.setFont(font)
+        self.widget_2.setObjectName("widget_2")
+        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.widget_2)
+        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.start_menu_button = QtWidgets.QPushButton(self.widget_2)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.start_menu_button.setFont(font)
+        self.start_menu_button.setObjectName("start_menu_button")
+        self.horizontalLayout_2.addWidget(self.start_menu_button)
+        self.score_text = QtWidgets.QLabel(self.widget_2)
+        self.score_text.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.score_text.setObjectName("score_text")
+        self.horizontalLayout_2.addWidget(self.score_text)
+        self.score_label = QtWidgets.QLabel(self.widget_2)
+        self.score_label.setObjectName("score_label")
+        self.horizontalLayout_2.addWidget(self.score_label)
+        self.pushButton = QtWidgets.QPushButton(self.widget_2)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.pushButton.setFont(font)
+        self.pushButton.setObjectName("pushButton")
+        self.horizontalLayout_2.addWidget(self.pushButton)
+        self.timer_label = QtWidgets.QLabel(self.widget_2)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.timer_label.setFont(font)
+        self.timer_label.setAlignment(QtCore.Qt.AlignCenter)
+        self.timer_label.setObjectName("timer_label")
+        self.horizontalLayout_2.addWidget(self.timer_label)
+        self.end_button = QtWidgets.QPushButton(self.widget_2)
+        self.end_button.setObjectName("end_button")
+        self.horizontalLayout_2.addWidget(self.end_button)
+        self.verticalLayout.addWidget(self.widget_2)
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.label_1 = QtWidgets.QLabel(Form)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_1.setFont(font)
+        self.label_1.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_1.setObjectName("label_1")
+        self.horizontalLayout.addWidget(self.label_1)
+        self.label_2 = QtWidgets.QLabel(Form)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_2.setFont(font)
+        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_2.setObjectName("label_2")
+        self.horizontalLayout.addWidget(self.label_2)
+        self.label_3 = QtWidgets.QLabel(Form)
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_3.setFont(font)
+        self.label_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_3.setObjectName("label_3")
+        self.horizontalLayout.addWidget(self.label_3)
+        self.verticalLayout.addLayout(self.horizontalLayout)
+
+        self.retranslateUi(Form)
+        QtCore.QMetaObject.connectSlotsByName(Form)
+
+    def retranslateUi(self, Form):
+        _translate = QtCore.QCoreApplication.translate
+        Form.setWindowTitle(_translate("Form", "Form"))
+        self.start_menu_button.setText(_translate("Form", "menu"))
+        self.score_text.setText(_translate("Form", "Score: "))
+        self.score_label.setText(_translate("Form", "00000"))
+        self.pushButton.setText(_translate("Form", "start"))
+        self.timer_label.setText(_translate("Form", "00:00"))
+        self.end_button.setText(_translate("Form", "end"))
+        self.label_1.setText(_translate("Form", "TextLabel"))
+        self.label_2.setText(_translate("Form", "TextLabel"))
+        self.label_3.setText(_translate("Form", "TextLabel"))
