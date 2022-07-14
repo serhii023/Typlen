@@ -5,6 +5,7 @@ from PyQt5.QtGui import QFont
 
 from widgets.play_word_widget import Ui_Form
 
+
 # class for checking if the typed symbol is corect and/or is the last
 class WordWidget(QWidget):
     def __init__(self, program, word):
