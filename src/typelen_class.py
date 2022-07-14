@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
-# from PyQt5.uic import loadUi
+import json
 from PyQt5 import QtGui
 
 from widgets.main_window import Ui_MainWindow
@@ -21,6 +21,15 @@ class Typlen(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.go_to_start_menu()
+        self.load_setings()
+
+    def load_setings(self):
+        with open("settings.json", 'r', encoding='utf-8') as settings:
+            self.settings = json.loads(settings.read())
+    
+    def save_settings(self):
+        with open("settings.json", 'w', encoding='utf-8') as settings:
+            settings.write(json.dumps(self.settings, indent=4))
 
     def open_new_window(self, window):
         self.setCentralWidget(window)
@@ -48,15 +57,24 @@ class Typlen(QMainWindow):
         self.open_new_window(CreditsWindow(self))
 
 
-
-
-
-if __name__ == '__main__':
+def run_program():
     app = QApplication(sys.argv)
         
     typlen = Typlen()
 
-    typlen.showMaximized()
+    typlen.show()
     sys.exit(app.exec_())
 
 
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    typlen = Typlen()
+
+    print(typlen.settings)
+    typlen.settings['age'] = "34"
+    print(typlen.settings)
+    typlen.save_settings()
+
+
+    typlen.show()
+    #sys.exit(app.exec_())

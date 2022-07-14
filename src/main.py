@@ -1,12 +1,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication
 
-from typelen_class import Typlen
-
+from typelen_class import Typlen, run_program
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    typlen = Typlen()
-    typlen.showMaximized()
-    
-    sys.exit(app.exec_())
+    run_program()
