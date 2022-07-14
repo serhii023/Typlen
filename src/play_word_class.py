@@ -5,7 +5,7 @@ from PyQt5.QtGui import QFont
 
 from widgets.play_word_widget import Ui_Form
 
-
+# class for checking if the typed symbol is corect and/or is the last
 class WordWidget(QWidget):
     def __init__(self, program, word):
         self.program = program
@@ -38,6 +38,9 @@ class WordWidget(QWidget):
         self.current_letter_id = 0
         self.letters[self.current_letter_id].setFont(self.underline)
 
+    # if it's the last character return 1 else 0
+    # if character is correct, go to the next
+    # if isn't correct, mark current character
     def check_letter(self, letter):
         if letter == self.letters[self.current_letter_id].text():
             self.letters[self.current_letter_id].setFont(self.usual)

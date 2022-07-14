@@ -33,12 +33,17 @@ class PlayWindow(QWidget):
 
     def keyPressEvent(self, e):
         s = e.text()
-        if s.isalpha() or s in APROPRIATE_CHARS:
+        if s.isprintable():
             if(self.current_word.check_letter(s)):
                 self.next_word()
                 
-
+    # Sets new word as current
     def next_word(self):
+        # There is at least one more vord to type
+        if (self.current_word_id + 1 >= len(self.words)):
+            self.program.go_to_results_window()
+            return
+
         self.ui.horizontalLayout_3.removeWidget(self.current_word)
         self.current_word.deleteLater()
         self.ui.prew.setText(self.words[self.current_word_id])
@@ -47,3 +52,5 @@ class PlayWindow(QWidget):
         self.ui.horizontalLayout_3.addWidget(self.current_word)
         if(self.current_word_id + 1 < len(self.words)):
             self.ui.next.setText(self.words[self.current_word_id + 1])
+        else:
+            self.ui.next.setText("    ")
