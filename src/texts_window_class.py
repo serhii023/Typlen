@@ -14,4 +14,7 @@ class TextsWindow(QWidget):
         self.ui.start_menu_button.clicked.connect(self.program.go_to_start_menu)
         self.ui.edit_button.clicked.connect(self.program.go_to_text_edit_window)
 
+        self.texts_files = []
+        
+
 
