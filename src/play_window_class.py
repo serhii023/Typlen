@@ -5,9 +5,6 @@ from widgets.play_window import Ui_Form
 
 from play_word_class import WordWidget
 
-APROPRIATE_CHARS = ['.', ',', ':', '"', "'", ';', '?', ' ',
-                    '!', '@', '$', '*', '/', '-', '+','{','}','[',']','=', '_',
-                    1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
 class PlayWindow(QWidget):
     def __init__(self, program):
         self.program = program
@@ -20,7 +17,7 @@ class PlayWindow(QWidget):
         self.ui.end_button.clicked.connect(self.program.go_to_results_window)
 
         self.words = []
-        with open('texts/empty_text.txt','r') as file:
+        with open('texts/' + self.program.settings.get("main_text"),'r') as file:
             for line in file:
                 for word in line.split():
                     self.words.append(word)
